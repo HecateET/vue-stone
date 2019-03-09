@@ -18,6 +18,8 @@ export default {
   created(){
 
   },
+  mounted() {
+  }
 
 }
 </script>
@@ -26,4 +28,5 @@ export default {
   #app {
 
   }
+
 </style>

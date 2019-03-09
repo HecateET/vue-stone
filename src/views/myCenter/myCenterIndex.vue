@@ -1,12 +1,12 @@
 <template>
-  <section class="home-index">
-    <p>首页</p>
-  </section>
+    <section class="my-center">
+      <p>个人中心</p>
+    </section>
 </template>
 
 <script>
     export default {
-      name: "index",
+      name: "myCenterIndex",
       components:{
 
       },
@@ -19,8 +19,7 @@
       created() {
       },
       mounted() {
-        $(".home-index").css("min-height",this.Height-$("#myHeader").height());
-        console.log(this.Height);
+        $(".my-center").css("min-height",this.Height-$("#myHeader").height());
       },
       methods:{
 
@@ -29,9 +28,8 @@
 </script>
 
 <style scoped>
-  .home-index{
+  .my-center{
     width: 100%;
-    /*min-height: 800px;*/
-    background-color: yellow;
+    background: lightseagreen;
   }
 </style>

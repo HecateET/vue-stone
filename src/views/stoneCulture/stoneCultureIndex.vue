@@ -1,12 +1,12 @@
 <template>
-  <section class="home-index">
-    <p>首页</p>
-  </section>
+    <section class="stone-culture">
+      <p>奇石文化</p>
+    </section>
 </template>
 
 <script>
     export default {
-      name: "index",
+      name: "stoneCultureIndex",
       components:{
 
       },
@@ -19,7 +19,7 @@
       created() {
       },
       mounted() {
-        $(".home-index").css("min-height",this.Height-$("#myHeader").height());
+        $(".stone-culture").css("min-height",this.Height-$("#myHeader").height());
         console.log(this.Height);
       },
       methods:{
@@ -29,9 +29,8 @@
 </script>
 
 <style scoped>
-  .home-index{
+  .stone-culture{
     width: 100%;
-    /*min-height: 800px;*/
-    background-color: yellow;
+    background-color: aqua;
   }
 </style>

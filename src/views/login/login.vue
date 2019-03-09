@@ -1,12 +1,12 @@
 <template>
-  <section class="home-index">
-    <p>首页</p>
-  </section>
+    <section class="login">
+      <p>登录</p>
+    </section>
 </template>
 
 <script>
     export default {
-      name: "index",
+      name: "login",
       components:{
 
       },
@@ -19,7 +19,7 @@
       created() {
       },
       mounted() {
-        $(".home-index").css("min-height",this.Height-$("#myHeader").height());
+        $(".login").css("min-height",this.Height-$("#myHeader").height());
         console.log(this.Height);
       },
       methods:{
@@ -29,9 +29,8 @@
 </script>
 
 <style scoped>
-  .home-index{
+  .login{
     width: 100%;
-    /*min-height: 800px;*/
-    background-color: yellow;
+    background-color: darkviolet;
   }
 </style>

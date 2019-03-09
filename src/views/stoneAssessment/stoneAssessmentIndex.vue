@@ -1,12 +1,13 @@
 <template>
-  <section class="home-index">
-    <p>首页</p>
-  </section>
+    <section class="stone-assessment-index">
+      <p>成分分析</p>
+      <p>奇石评估</p>
+    </section>
 </template>
 
 <script>
     export default {
-      name: "index",
+      name: "stoneAssessmentIndex",
       components:{
 
       },
@@ -19,8 +20,7 @@
       created() {
       },
       mounted() {
-        $(".home-index").css("min-height",this.Height-$("#myHeader").height());
-        console.log(this.Height);
+        $(".stone-assessment-index").css("min-height",this.Height-$("#myHeader").height());
       },
       methods:{
 
@@ -29,9 +29,8 @@
 </script>
 
 <style scoped>
-  .home-index{
+  .stone-assessment-index{
     width: 100%;
-    /*min-height: 800px;*/
-    background-color: yellow;
+    background-color: gold;
   }
 </style>

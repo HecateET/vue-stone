@@ -1,12 +1,12 @@
 <template>
-  <section class="home-index">
-    <p>首页</p>
-  </section>
+    <section class="expo-stone-index">
+      <p>博览奇石</p>
+    </section>
 </template>
 
 <script>
     export default {
-      name: "index",
+      name: "expoStoneIndex",
       components:{
 
       },
@@ -17,21 +17,22 @@
         }
       },
       created() {
+
       },
       mounted() {
-        $(".home-index").css("min-height",this.Height-$("#myHeader").height());
-        console.log(this.Height);
+        $(".expo-stone-index").css("min-height",this.Height-$("#myHeader").height());
       },
       methods:{
+        init(){
 
+        },
       },
     }
 </script>
 
 <style scoped>
-  .home-index{
+  .expo-stone-index{
     width: 100%;
-    /*min-height: 800px;*/
-    background-color: yellow;
+    background-color: darkturquoise;
   }
 </style>

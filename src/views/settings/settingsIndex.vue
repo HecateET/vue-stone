@@ -1,12 +1,12 @@
 <template>
-  <section class="home-index">
-    <p>首页</p>
-  </section>
+    <section class="settings-index">
+      <p>用户设置信息页</p>
+    </section>
 </template>
 
 <script>
     export default {
-      name: "index",
+      name: "settingsIndex",
       components:{
 
       },
@@ -19,8 +19,7 @@
       created() {
       },
       mounted() {
-        $(".home-index").css("min-height",this.Height-$("#myHeader").height());
-        console.log(this.Height);
+        $(".settings-index").css("min-height",this.Height-$("#myHeader").height());
       },
       methods:{
 
@@ -29,9 +28,8 @@
 </script>
 
 <style scoped>
-  .home-index{
+  .settings-index{
     width: 100%;
-    /*min-height: 800px;*/
-    background-color: yellow;
+    background-color: aqua;
   }
 </style>

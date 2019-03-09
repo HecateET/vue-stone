@@ -17,9 +17,10 @@
         <ul class="nav navbar-nav navbar-left">
           <!--exact可以避免根路由使用始终激活的样式-->
           <router-link tag="li" active-class="active" role="presentation" to="/" exact><a class="text-color">首页</a></router-link>
-          <router-link tag="li" active-class="active" role="presentation" to="/wall"><a class="text-color">博览奇石</a></router-link>
-          <router-link tag="li" active-class="active" role="presentation" to="/activity"><a class="text-color">奇石文化</a></router-link>
-          <router-link tag="li" active-class="active" role="presentation" to="/port"><a class="text-color">奇石圈</a></router-link>
+          <router-link tag="li" active-class="active" role="presentation" to="/expoStone"><a class="text-color">博览奇石</a></router-link>
+          <router-link tag="li" active-class="active" role="presentation" to="/stoneCulture"><a class="text-color">奇石文化</a></router-link>
+          <router-link tag="li" active-class="active" role="presentation" to="/circleStone"><a class="text-color">奇石圈</a></router-link>
+          <router-link tag="li" active-class="active" role="presentation" to="/stoneAssessment"><a class="text-color">奇石估价</a></router-link>
 
         </ul>
 
@@ -30,14 +31,15 @@
 
         <ul class="nav navbar-nav navbar-right" v-if="isLogin">
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;&nbsp;{{nickname}} <span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;&nbsp;Hecate <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a class="text-color" :href="'/user/' + userId + '/aboutme'">我的首页</a></li>
-              <router-link tag="li" role="presentation" to="/searchcard"><a class="text-color">查询明信片</a></router-link>
+              <!--<li><a class="text-color" :href="'/user/' + userId + '/aboutme'">个人中心</a></li>-->
+              <router-link tag="li" role="presentation" to="/myCenter"><a class="text-color">个人中心</a></router-link>
+              <router-link tag="li" role="presentation" to="/publishStone"><a class="text-color">发布奇石</a></router-link>
               <li><a class="text-color" href="/">退出登录</a></li>
             </ul>
           </li>
-          <router-link tag="li" role="presentation" to="/userset/info"><a class="text-color"><span class="glyphicon glyphicon-cog"></span>  设置</a></router-link>
+          <router-link tag="li" role="presentation" to="/settings"><a class="text-color"><span class="glyphicon glyphicon-cog"></span>  设置</a></router-link>
         </ul>
       </div>
     </div>
@@ -50,13 +52,19 @@
       name: "Header",
       data(){
         return{
-          isLogin:false,
+          isLogin:true,
         }
       },
     }
 </script>
 
 <style scoped>
+  #myHeader{
+
+  }
+  .navbar{
+    margin: 0;
+  }
   .navbar, .dropdown-menu {
     background-color: #BDD1C5;
   }
