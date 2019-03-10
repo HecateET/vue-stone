@@ -7,6 +7,15 @@ import stoneCultureIndex from '@/views/stoneCulture/stoneCultureIndex'
 import login from '@/views/login/login'
 import register from '@/views/register/register'
 import myCenter from '@/views/myCenter/myCenterIndex'
+import personInfo from '@/views/myCenter/personInfo'
+import myPort from '@/views/myCenter/myPort'
+import myCollection from '@/views/myCenter/myCollection'
+import myFans from '@/views/myCenter/myFans'
+import myFollow from '@/views/myCenter/myFollow'
+
+
+
+
 import settings from '@/views/settings/settingsIndex'
 import publishStone from '@/views/publishStone/publishStone'
 import stoneAssessment from '@/views/stoneAssessment/stoneAssessmentIndex'
@@ -48,7 +57,35 @@ export default new Router({
     { //个人中心
       path: '/myCenter',
       name: 'myCenter',
-      component: myCenter
+      component: myCenter,
+      redirect:"/myCenter/personInfo",
+      children:[
+        {
+          path:"personInfo",
+          name:"personInfo",
+          component:personInfo,
+        },
+        {
+          path:"myCollection",
+          name:"myCollection",
+          component:myCollection,
+        },
+        {
+          path:"myPort",
+          name:"myPort",
+          component:myPort,
+        },
+        {
+          path:"myFans",
+          name:"myFans",
+          component:myFans,
+        },
+        {
+          path:"myFollow",
+          name:"myFollow",
+          component:myFollow,
+        },
+      ],
     },
     { //设置页面
       path: '/settings',
