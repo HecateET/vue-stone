@@ -1,6 +1,9 @@
 <template>
   <section class="home-index">
-    <p>首页</p>
+    <!--轮播图-->
+    <div class="container">
+      <p>首页</p>
+    </div>
   </section>
 </template>
 
@@ -20,6 +23,9 @@
       },
       mounted() {
         $(".home-index").css("min-height",this.Height-$("#myHeader").height());
+        var mySwiper = new Swiper('.swiper-container',{
+          autoplay:true
+        });
         console.log(this.Height);
       },
       methods:{
@@ -33,5 +39,8 @@
     width: 100%;
     /*min-height: 800px;*/
     background-color: yellow;
+  }
+  .container{
+    background-color: white;
   }
 </style>
