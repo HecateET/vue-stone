@@ -31,7 +31,9 @@
 
         <ul class="nav navbar-nav navbar-right" v-if="isLogin">
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;&nbsp;Hecate <span class="caret"></span></a>
+            <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;&nbsp;Hecate <span class="caret"></span></a>-->
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <img class="headpic" src="../assets/images/myCenter/headpic.jpg">&nbsp;&nbsp;&nbsp;Hecate <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <!--<li><a class="text-color" :href="'/user/' + userId + '/aboutme'">个人中心</a></li>-->
               <router-link tag="li" role="presentation" to="/myCenter"><a class="text-color">个人中心</a></router-link>
@@ -76,5 +78,10 @@
 
   li {
     cursor: pointer;
+  }
+  .headpic{
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
   }
 </style>
