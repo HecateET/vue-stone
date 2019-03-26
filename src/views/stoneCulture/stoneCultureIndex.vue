@@ -4,6 +4,9 @@
         <!--分类栏-->
         <div class="article-classify">
           <div class="classify-item" v-for="(item,index) in cityList" :key="index">{{item.cityName }}</div>
+          <div class="classify-extend">
+            <p v-for="(i,index) in cityList[0].cityStoneClassify" :key="index">{{i.stoneName}}</p>
+          </div>
         </div>
         <!--文章内容区-->
         <div class="article-content"></div>
@@ -280,6 +283,7 @@
   }
   /*文章分类栏*/
   .article-classify{
+    position: relative;
     width: 100px;
     height: auto;
     background-color: white;
@@ -294,6 +298,17 @@
   }
   .article-classify .classify-item:hover{
     background-color: palegreen;
+  }
+  .classify-extend{
+    position: absolute;
+    top: 0;
+    left: 100px;
+    width: 300px;
+    height: auto;
+    /*height: 300px;*/
+    /*height: 100%;*/
+    background: honeydew;
+    z-index: 100;
   }
   /*文章内容栏*/
   .article-content{

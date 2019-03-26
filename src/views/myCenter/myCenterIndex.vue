@@ -8,6 +8,20 @@
             </div>
             <div class="user-name">Hecate</div>
             <div class="user-intro">Good Good Study,Day Day Up</div>
+            <div class="user-list">
+              <div class="user-item" @click="routerUrl('/myCenter/myFollow')">
+                <p class="user-item-num">30</p>
+                <p class="user-item-type">我的关注</p>
+              </div>
+              <div class="user-item" @click="routerUrl('/myCenter/myFans')">
+                <p class="user-item-num">20</p>
+                <p class="user-item-type">我的粉丝</p>
+              </div>
+              <div class="user-item" @click="routerUrl('/myCenter/myPort')">
+                <p class="user-item-num">19</p>
+                <p class="user-item-type">我的发布</p>
+              </div>
+            </div>
           </div>
         </div>
         <div class="center-content">
@@ -21,31 +35,59 @@
             <!--</div>-->
 
             <ul class="aside-menu">
-              <li class="aside-item">
-                <router-link tag="li" class="one-menu-child" active-class="active" role="presentation" to="/myCenter">
-                  <a class="text-color">个人信息</a>
+              <!--<li class="aside-item">-->
+              <a class="text-color">
+                <router-link tag="li" class="aside-item one-menu-child" active-class="active" role="presentation" to="/myCenter/personInfo">
+                  个人信息
                 </router-link>
-              </li>
-              <li class="aside-item">
-                <router-link tag="li" class="one-menu-child" active-class="active" role="presentation" to="/myCenter/myCollection">
-                  <a class="text-color">我的收藏</a>
+              </a>
+
+              <!--</li>-->
+              <!--<li class="aside-item">-->
+              <a class="text-color">
+                <router-link tag="li" class="aside-item one-menu-child" active-class="active" role="presentation" to="/myCenter/publishStone">
+                  发布奇石
                 </router-link>
-              </li>
-              <li class="aside-item">
-                <router-link tag="li" class="one-menu-child" active-class="active" role="presentation" to="/myCenter/myPort">
-                  <a class="text-color">我的帖子</a>
+              </a>
+              <!--</li>-->
+              <!--<li class="aside-item">-->
+              <a class="text-color">
+                <router-link tag="li" class="aside-item one-menu-child" active-class="active" role="presentation" to="/myCenter/friendDynamic">
+                  好友动态
                 </router-link>
-              </li>
-              <li class="aside-item">
-                <router-link tag="li" class="one-menu-child" active-class="active" role="presentation" to="/myCenter/myFans">
-                  <a class="text-color">我的粉丝</a>
+              </a>
+
+              <!--</li>-->
+              <!--<li class="aside-item">-->
+              <a class="text-color">
+                <router-link tag="li" class="aside-item one-menu-child" active-class="active" role="presentation" to="/myCenter/myCollection">
+                  我的收藏
                 </router-link>
-              </li>
-              <li class="aside-item">
-                <router-link tag="li" class="one-menu-child" active-class="active" role="presentation" to="/myCenter/myFollow">
-                  <a class="text-color">我的关注</a>
+              </a>
+
+              <!--</li>-->
+              <!--<li class="aside-item">-->
+              <a class="text-color">
+                <router-link tag="li" class="aside-item one-menu-child" active-class="active" role="presentation" to="/myCenter/myPort">
+                  我的帖子
                 </router-link>
-              </li>
+              </a>
+              <!--</li>-->
+              <!--<li class="aside-item">-->
+                <!--<router-link tag="li" class="one-menu-child" active-class="active" role="presentation" to="/myCenter/myPort">-->
+                  <!--<a class="text-color">个人设置</a>-->
+                <!--</router-link>-->
+              <!--</li>-->
+              <!--<li class="aside-item">-->
+                <!--<router-link tag="li" class="one-menu-child" active-class="active" role="presentation" to="/myCenter/myFans">-->
+                  <!--<a class="text-color">我的粉丝</a>-->
+                <!--</router-link>-->
+              <!--</li>-->
+              <!--<li class="aside-item">-->
+                <!--<router-link tag="li" class="one-menu-child" active-class="active" role="presentation" to="/myCenter/myFollow">-->
+                  <!--<a class="text-color">我的关注</a>-->
+                <!--</router-link>-->
+              <!--</li>-->
             </ul>
           </div>
           <div class="my-center-content">
@@ -76,26 +118,31 @@
         $(".my-center").css("min-height",this.Height-$("#myHeader").height());
       },
       methods:{
-
+      //  路由跳转
+        routerUrl(url){
+          this.$router.push({ path:url});
+        },
       },
     }
 </script>
 
 <style scoped>
   *{
+    font-family: "Impact,Arial,Microsoft YaHei";
     /*margin: 0;*/
     /*padding: 0;*/
   }
   .my-center{
     width: 100%;
-    background: lightseagreen;
+    /*background: lightseagreen;*/
   }
   .container{
     background-color: white;
   }
   /*个人中心bannerr部分*/
   .center-banner{
-    background-color: palegreen;
+    /*background:url("../../assets/") palegreen;*/
+    background: palegreen;
     height: 300px;
     display: -webkit-box;
     -webkit-box-pack: center;
@@ -104,7 +151,7 @@
   }
   .userinfo{
     width: 30%;
-    height: 80%;
+    /*height: 80%;*/
     background-color: lemonchiffon;
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -125,11 +172,58 @@
     border-radius: 50%;
   }
   .userinfo .user-name{
-    font-family: Arial;
+    font-family: "Impact,Arial,Microsoft YaHei";
     font-size: 18px;
+    font-weight: bold;
     color: #333;
-    margin: 10px;
+    /*margin: 10px;*/
   }
+  .userinfo .user-intro{
+    color: #333;
+    font-size: 16px;
+    padding: 5px;
+  }
+  /*粉丝标题*/
+  .userinfo .user-list{
+    display: -webkit-box;
+    width: 100%;
+    /*height: 60px;*/
+    padding: 10px 0;
+    border-top: 1px solid #ccc;
+    /*background-color: #edff7e;*/
+  }
+  .userinfo .user-list .user-item{
+    font-family: "Impact,Arial,Microsoft YaHei";
+    -webkit-box-flex: 1;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    border-right: 1px solid #ccc;
+  }
+  .userinfo .user-list .user-item:hover{
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.3);
+  }
+  .user-item:hover .user-item-num,.user-item:hover .user-item-type{
+    color: #fff;
+  }
+
+  .userinfo .user-list .user-item:last-child{
+    border-right: none;
+  }
+  .user-item-num{
+    font-family: "Impact,Arial,Microsoft YaHei";
+    color: #333;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .user-item-type{
+    color: #555;
+    font-size: 16px;
+  }
+
+
   /*个人中心主体部分*/
   .center-content{
     display: -webkit-box;
@@ -144,12 +238,37 @@
   }
   .aside-item{
     width: 100%;
-    height: 40px;
+    height: 45px;
     text-align: center;
-    line-height: 40px;
+    line-height: 45px;
     background-color: skyblue;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    font-size: 18px;
   }
+  .text-color{
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+  }
+  .aside-item:hover{
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+  }
+  .router-link-exact-active{
+    /*background-color: #fff;*/
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+  }
+  .active{
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+  }
+  /*.aside-item .text-color:hover{*/
+    /*color: #FF7F50;*/
+  /*}*/
   .center-aside{
     width: 250px;
     border-right: 1px solid #ccc;

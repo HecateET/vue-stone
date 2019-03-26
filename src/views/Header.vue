@@ -16,17 +16,17 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-left">
           <!--exact可以避免根路由使用始终激活的样式-->
-          <router-link tag="li" active-class="active" role="presentation" to="/" exact><a class="text-color">首页</a></router-link>
-          <router-link tag="li" active-class="active" role="presentation" to="/expoStone"><a class="text-color">博览奇石</a></router-link>
-          <router-link tag="li" active-class="active" role="presentation" to="/stoneCulture"><a class="text-color">奇石文化</a></router-link>
-          <router-link tag="li" active-class="active" role="presentation" to="/circleStone"><a class="text-color">奇石圈</a></router-link>
-          <router-link tag="li" active-class="active" role="presentation" to="/stoneAssessment"><a class="text-color">奇石估价</a></router-link>
+          <router-link tag="li" role="presentation" to="/" exact><a class="text-color">首页</a></router-link>
+          <router-link tag="li" role="presentation" to="/expoStone"><a class="text-color">博览奇石</a></router-link>
+          <router-link tag="li" role="presentation" to="/stoneCulture"><a class="text-color">奇石文化</a></router-link>
+          <router-link tag="li" role="presentation" to="/circleStone"><a class="text-color">奇石圈</a></router-link>
+          <!--<router-link tag="li" role="presentation" to="/stoneAssessment"><a class="text-color">奇石估价</a></router-link>-->
 
         </ul>
 
         <ul class="nav navbar-nav navbar-right" v-if="!isLogin">
-          <router-link tag="li" active-class="active" role="presentation" to="/login"><a class="text-color">登录</a></router-link>
-          <router-link tag="li" active-class="active" role="presentation" to="/register"><a class="text-color">注册</a></router-link>
+          <router-link tag="li" role="presentation" to="/login"><a class="text-color">登录</a></router-link>
+          <router-link tag="li" role="presentation" to="/register"><a class="text-color">注册</a></router-link>
         </ul>
 
         <ul class="nav navbar-nav navbar-right" v-if="isLogin">
@@ -68,11 +68,18 @@
     margin: 0;
   }
   .navbar, .dropdown-menu {
-    background-color: #BDD1C5;
+    /*background-color: #BDD1C5;*/
+    background-color: rgb(35, 42, 52);
+    color: #fff;
   }
-
+  .navbar-default .navbar-brand {
+    color: #d3d3d3;
+  }
+  .navbar-default .navbar-nav>li>a {
+    color: #d3d3d3;
+  }
   li .text-color, .dropdown .dropdown-toggle {
-    /*color: #FFFEEE;*/
+    color: #d3d3d3;
     font-size: 16px;
   }
 
@@ -80,8 +87,22 @@
     cursor: pointer;
   }
   .headpic{
-    width: 28px;
-    height: 28px;
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
+  }
+  .router-link-exact-active{
+    /*background-color: #fff;*/
+    border: 1px solid #fff;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 25px;
+    font-weight: bold;
+  }
+  .active{
+    /*background-color: #fff;*/
+    color: #fff;
+    font-size: 25px;
+    font-weight: bolder;
   }
 </style>

@@ -9,6 +9,7 @@ import register from '@/views/register/register'
 import myCenter from '@/views/myCenter/myCenterIndex'
 import personInfo from '@/views/myCenter/personInfo'
 import myPort from '@/views/myCenter/myPort'
+import friendDynamic from '@/views/myCenter/friendDynamic'
 import myCollection from '@/views/myCenter/myCollection'
 import myFans from '@/views/myCenter/myFans'
 import myFollow from '@/views/myCenter/myFollow'
@@ -60,30 +61,40 @@ export default new Router({
       component: myCenter,
       redirect:"/myCenter/personInfo",
       children:[
-        {
+        {//个人信息
           path:"personInfo",
           name:"personInfo",
           component:personInfo,
         },
-        {
+        {//我的收藏
           path:"myCollection",
           name:"myCollection",
           component:myCollection,
         },
-        {
+        {//我的帖子
           path:"myPort",
           name:"myPort",
           component:myPort,
         },
-        {
+        {//好友动态
+          path:"friendDynamic",
+          name:"friendDynamic",
+          component:friendDynamic,
+        },
+        {//我的粉丝
           path:"myFans",
           name:"myFans",
           component:myFans,
         },
-        {
+        {//我的关注
           path:"myFollow",
           name:"myFollow",
           component:myFollow,
+        },
+        { //发布奇石
+          path: 'publishStone',
+          name: 'publishStone',
+          component: publishStone
         },
       ],
     },
@@ -91,11 +102,6 @@ export default new Router({
       path: '/settings',
       name: 'settings',
       component: settings
-    },
-    { //发布奇石
-      path: '/publishStone',
-      name: 'publishStone',
-      component: publishStone
     },
     { //奇石评估
       path: '/stoneAssessment',
