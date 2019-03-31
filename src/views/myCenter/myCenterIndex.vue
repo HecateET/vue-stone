@@ -23,6 +23,7 @@
               </div>
             </div>
           </div>
+          <div class="change-bgm">更换背景图</div>
         </div>
         <div class="center-content">
           <!--个人中心菜单-->
@@ -134,6 +135,7 @@
   }
   .my-center{
     width: 100%;
+    margin-bottom: 30px;
     /*background: lightseagreen;*/
   }
   .container{
@@ -141,23 +143,25 @@
   }
   /*个人中心bannerr部分*/
   .center-banner{
-    /*background:url("../../assets/") palegreen;*/
-    background: palegreen;
+    position: relative;
     height: 300px;
     display: -webkit-box;
     -webkit-box-pack: center;
     -webkit-box-align: center;
     margin-bottom: 15px;
+    background:url("../../assets/images/myCenter/center1.jpeg") palegreen center no-repeat ;
+    background-size: cover;
   }
   .userinfo{
     width: 30%;
     /*height: 80%;*/
-    background-color: lemonchiffon;
+    background-color: rgba(255,250,205,0.5);
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-box-align: center;
     -webkit-box-pack: center;
     text-align: center;
+    border-radius: 10px;
   }
   .user-headpic{
     width: 100px;
@@ -176,12 +180,11 @@
     font-size: 18px;
     font-weight: bold;
     color: #333;
-    /*margin: 10px;*/
   }
   .userinfo .user-intro{
     color: #333;
     font-size: 16px;
-    padding: 5px;
+    padding-bottom: 5px;
   }
   /*粉丝标题*/
   .userinfo .user-list{
@@ -220,6 +223,14 @@
   }
   .user-item-type{
     color: #555;
+    font-size: 16px;
+  }
+
+  .center-banner .change-bgm{
+    position: absolute;
+    top: 5%;
+    right: 2%;
+    color: #fff;
     font-size: 16px;
   }
 

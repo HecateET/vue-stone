@@ -37,7 +37,7 @@
             <ul class="dropdown-menu">
               <!--<li><a class="text-color" :href="'/user/' + userId + '/aboutme'">个人中心</a></li>-->
               <router-link tag="li" role="presentation" to="/myCenter"><a class="text-color">个人中心</a></router-link>
-              <router-link tag="li" role="presentation" to="/publishStone"><a class="text-color">发布奇石</a></router-link>
+              <router-link tag="li" role="presentation" to="/myCenter/publishStone"><a class="text-color">发布奇石</a></router-link>
               <li><a class="text-color" href="/">退出登录</a></li>
             </ul>
           </li>

@@ -129,6 +129,7 @@
 
 <style scoped>
   .my-port{
+    font-family: Arial;
     background-color: #fff;
   }
   .my-port-nav{
@@ -207,6 +208,10 @@
     text-align: left;
     color: #666;
     font-size: 14px;
+  }
+  .item-container .port-title{
+    font-size: 16px;
+    color: #333;
   }
   .item-container .picture{
     margin: 10px 0;

@@ -15,13 +15,14 @@
         <div class="my-port-item" v-for="(item,index) in portList" :key="index">
           <div class="item-content-top">
             <div class="item-headpic">
-              <img src="../../assets/images/myCenter/headpic.jpg">
+              <img :src="item.userHeadPic">
             </div>
             <div class="item-container">
               <p class="user-name">{{item.userName}}</p>
               <p class="punch-time">{{item.punchData}}</p>
               <div class="port-title">{{item.portTitle}}</div>
               <div class="picture">
+                <img v-for="(is,index1) in item.contentPictures" class="picture-img" :src="is.picSrc">
               </div>
             </div>
           </div>
@@ -44,51 +45,65 @@
               {
                 userName:"Crash",
                 punchData:"2019-3-18 09:09",
-                portTitle:"静态天气真真好呀哈哈啊哈哈大方",
-                userHeadPic:"../../assets/images/myCenter/headpic.jpg",
+                portTitle:"今天天气真真好呀哈哈，快来欣赏我新收藏的石头吧~",
+                userHeadPic:require("../../assets/images/myCenter/headpic.jpg"),
                 portViews:"90",
                 comments:"1",
-                contentPictures:{},
+                contentPictures:[
+                  {picSrc:require("../../assets/images/myCenter/stone1.jpg")},
+                  {picSrc:require("../../assets/images/myCenter/stone2.jpg")},
+                ],
                 portStar:3,
               },
               {
                 userName:"小可爱呢",
                 punchData:"2019-3-18 09:09",
-                portTitle:"静态天气真真好呀哈哈啊哈哈大方",
-                userHeadPic:"../../assets/images/myCenter/headpic.jpg",
+                portTitle:"以石为美。钟爱！",
+                userHeadPic:require("../../assets/images/myCenter/headpic1.jpg"),
                 portViews:"90",
                 comments:"1",
-                contentPictures:{},
+                contentPictures:[
+                  {picSrc:require("../../assets/images/myCenter/stone2.jpg")},
+                ],
                 portStar:3,
               },
               {
                 userName:"Hecate",
                 punchData:"2019-3-18 09:09",
                 portTitle:"静态天气真真好呀哈哈啊哈哈大方",
-                userHeadPic:"../../assets/images/myCenter/headpic.jpg",
+                userHeadPic:require("../../assets/images/myCenter/headpic.jpg"),
                 portViews:"90",
                 comments:"1",
-                contentPictures:{},
+                contentPictures:[
+                  {picSrc:require("../../assets/images/myCenter/stone1.jpg")},
+                  {picSrc:require("../../assets/images/myCenter/stone2.jpg")},
+                ],
                 portStar:3,
               },
               {
                 userName:"Hecate",
                 punchData:"2019-3-18 09:09",
                 portTitle:"静态天气真真好呀哈哈啊哈哈大方",
-                userHeadPic:"../../assets/images/myCenter/headpic.jpg",
+                userHeadPic:require("../../assets/images/myCenter/headpic.jpg"),
                 portViews:"90",
                 comments:"1",
-                contentPictures:{},
+                contentPictures:[
+                  {picSrc:require("../../assets/images/myCenter/stone1.jpg")},
+                  {picSrc:require("../../assets/images/myCenter/stone2.jpg")},
+                ],
                 portStar:3,
               },
               {
                 userName:"你是大笨蛋",
                 punchData:"2019-3-18 09:09",
                 portTitle:"静态天dsfadsfasf气真真好呀哈哈啊哈哈大方",
-                userHeadPic:"../../assets/images/myCenter/headpic.jpg",
+                userHeadPic:require("../../assets/images/myCenter/headpic.jpg"),
                 portViews:"10",
                 comments:"9",
-                contentPictures:{},
+                contentPictures:[
+                  {picSrc:require("../../assets/images/myCenter/stone1.jpg")},
+                  {picSrc:require("../../assets/images/myCenter/stone2.jpg")},
+                ],
                 portStar:5,
               },
               {
@@ -98,14 +113,17 @@
                 userHeadPic:"../../assets/images/myCenter/headpic.jpg",
                 portViews:"10",
                 comments:"2",
-                contentPictures:{},
+                contentPictures:[
+                  {picSrc:require("../../assets/images/myCenter/stone1.jpg")},
+                  {picSrc:require("../../assets/images/myCenter/stone2.jpg")},
+                ],
                 portStar:9,
               },
               {
                 userName:"Hecate",
                 punchData:"2019-3-15 09:09",
                 portTitle:"静态dsfdsfad天气真真好呀哈哈啊哈哈大方",
-                userHeadPic:"../../assets/images/myCenter/headpic.jpg",
+                userHeadPic:require("../../assets/images/myCenter/headpic.jpg"),
                 portViews:"10",
                 comments:"2",
                 contentPictures:{},
@@ -115,10 +133,13 @@
                 userName:"Hecate",
                 punchData:"2019-3-15 09:09",
                 portTitle:"静态dsfdsfad天气真真好呀哈哈啊哈哈大方",
-                userHeadPic:"../../assets/images/myCenter/headpic.jpg",
+                userHeadPic:require("../../assets/images/myCenter/headpic.jpg"),
                 portViews:"10",
                 comments:"0",
-                contentPictures:{},
+                contentPictures:[
+                  {picSrc:require("../../assets/images/myCenter/stone1.jpg")},
+                  {picSrc:require("../../assets/images/myCenter/stone2.jpg")},
+                ],
                 portStar:9,
               },
             ]
@@ -201,20 +222,29 @@
   .item-container .user-name{
     text-align: left;
     color: #333;
-    font-size: 20px;
+    font-size: 25px;
   }
   .item-container .punch-time{
     text-align: left;
     color: #666;
-    font-size: 14px;
+    font-size: 16px;
+  }
+  .item-container .port-title{
+    font-size: 18px;
+    color: #333;
   }
   .item-container .picture{
     margin: 10px 0;
+    width: 100%;
+    height: 150px;
+    /*height: 150px;*/
+    /*background-color: palegreen;*/
+  }
+  .item-container .picture .picture-img{
     width: 150px;
     height: 150px;
-    background-color: palegreen;
+    margin-left: 5px;
   }
-
   .my-port-item .item-content-bottom{
 
     display: -webkit-box;
@@ -234,6 +264,9 @@
   }
   .my-port-item .item-content-bottom div:last-child{
     border-right: none;
+  }
+  .item-content-bottom .port-views{
+    font-size: 16px;
   }
 
 
