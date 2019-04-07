@@ -92,6 +92,8 @@
     font-family: Arial;
     display: -webkit-box;
     font-size: 16px;
+    background-color: #fff;
+    padding: 20px 10px;
   }
   .base-info{
     -webkit-box-flex: 1;

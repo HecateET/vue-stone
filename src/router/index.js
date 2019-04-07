@@ -4,6 +4,7 @@ import index from '@/views/index/index'
 import expoStoneIndex from '@/views/expoStone/expoStoneIndex'
 import circleStoneIndex from '@/views/circleStone/circleStoneIndex'
 import stoneCultureIndex from '@/views/stoneCulture/stoneCultureIndex'
+import stoneArticle from '@/views/stoneCulture/articleIndex'
 import login from '@/views/login/login'
 import register from '@/views/register/register'
 import myCenter from '@/views/myCenter/myCenterIndex'
@@ -43,7 +44,12 @@ export default new Router({
     { //奇石文化
       path: '/stoneCulture',
       name: 'stoneCultureIndex',
-      component: stoneCultureIndex
+      component: stoneCultureIndex,
+    },
+    {//奇石文章详情
+      path:'/stoneArticle/:id',
+      name:'stoneArticle',
+      component:stoneArticle,
     },
     { //登录
       path: '/login',

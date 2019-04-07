@@ -136,10 +136,10 @@
   .my-center{
     width: 100%;
     margin-bottom: 30px;
-    /*background: lightseagreen;*/
+    background-color: #f5f6f7;
   }
   .container{
-    background-color: white;
+    /*background-color: #fff;*/
   }
   /*个人中心bannerr部分*/
   .center-banner{

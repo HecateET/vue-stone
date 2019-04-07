@@ -7,6 +7,8 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 
 import 'swiper/dist/css/swiper.css'
 
+import VueBarrel from 'vue-barrel';
+Vue.use(VueBarrel);
 
 Vue.config.productionTip = false
 

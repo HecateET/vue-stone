@@ -30,6 +30,6 @@
 <style scoped>
   .circle-stone-index{
     width: 100%;
-    background: forestgreen;
+    background: #f5f6f7;
   }
 </style>

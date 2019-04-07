@@ -182,7 +182,7 @@
     /*height: 500px;*/
     padding-bottom: 30px;
     font-family: Arial;
-    background-color: #F5F5F5;
+    background-color: #fff;
   }
   /*nav切换*/
   .collection-nav{
