@@ -38,7 +38,9 @@
           ct:$(".ct"),
           width:parseInt(window.getComputedStyle(ct, null).getPropertyValue("width")),
           rowHeight:150,
-          imgArr:[],
+          imgArr:[
+            "",
+          ],
         }
       },
       created() {

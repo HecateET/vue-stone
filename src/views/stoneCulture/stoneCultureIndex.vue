@@ -3,7 +3,7 @@
       <div class="stone-culture-box container">
         <!--分类栏-->
         <div class="article-classify">
-          <div class="classify-item" v-for="(item,index) in cityList" :key="index">{{item.cityName }}</div>
+          <div class="classify-item" @click="getStoneType(item.provinceId)" v-for="(item,index) in cityLists" :key="index">{{item.provinceName }}</div>
           <div class="classify-extend" v-show="false">
             <p v-for="(i,index) in cityList[0].cityStoneClassify" :key="index">{{i.stoneName}}</p>
           </div>
@@ -15,12 +15,12 @@
               <img :src="item.img">
             </div>
             <div class="article-info">
-              <p class="article-title">奇石dfasdafsdfsdfsddsfadsf文化的有啦大幅多少sdfasd发撒打发</p>
-              <p class="article-des">中华答复哈附件啊法艰苦大师傅爱的世界看的说法健康上的方式艰苦的时看得十分艰苦大师傅骄傲地说啊撒打发空间阿三地方刻阿道夫安徽是大家看法和啊实打实大反击和fsdfudhfajdskfhjasd石dfasdafsdfs石dfasdafsdfs石dfasdafsdfsdfsddsfadsf文化的有啦dfsddsfadsf文化的有啦dfsddsfadsf文化的有啦kfhkjadsfdsf</p>
+              <p class="article-title">{{item.title}}</p>
+              <p class="article-des">{{item.content}}</p>
               <div class="article-bottom">
                 <div class="author-box">
-                  <img class="author-icon" src="../../assets/images/myCenter/headpic1.jpg">
-                  <span class="author-name">Hecate</span>
+                  <img class="author-icon" :src="item.headPic">
+                  <span class="author-name">{{item.author}}</span>
                 </div>
                 <div class="publish-info">
                   <p>阅读数：39492</p>
@@ -61,6 +61,7 @@
         return{
           Height:$(window).height(),
           Width:$(window).width(),
+          cityLists:[],
           cityList:[
             {
               cityId:"",
@@ -293,27 +294,40 @@
             {
               articleId:1,
               img:require('../../assets/images/myCenter/stone1.jpg'),
-              title:"奇石的由来众说纷纭"
+              title:"奇石的由来众说纷纭",
+              content:"奇石，是立体的画，让人百看不厌。奇石，是烂漫的诗，让人百咏不烦。奇石，是无字的书，让人百读不倦。奇石，是多情的歌，让人吟唱不断。奇石，是清香的茶，让人愈品愈鲜。奇石，是醇厚的酒。让人欲醉欲仙。奇石，是迷魂的汤，让人如痴如癫。",
+              author:"Hecate",
+              headPic:require('../../assets/images/myCenter/headpic.jpg'),
             },
             {
               articleId:2,
               img:require('../../assets/images/myCenter/stone3.png'),
-              title:"奇石的由来众说纷纭"
+              title:"明白了奇石收藏的十大原则，出门淘宝贝不再是难事",
+              content:"所谓“国有国法，行有行规”，奇石收藏也要讲究原则。概括起来，奇石收藏主要有以下十大原则：一、浓厚兴趣一般人都有爱石情结，但要成为优秀的藏石家，还必须有一种强烈的、浓厚的兴趣，有一种嗜石如命的内在动力，追逐好石头有一种“上穷碧落下黄泉”的精神。",
+              author:"小番茄",
+              headPic:require('../../assets/images/myCenter/headpic3.jpg'),
             },
             {
               articleId:3,
               img:require('../../assets/images/myCenter/stone2.jpg'),
-              title:"奇石的由的撒客户来范德萨发众说纷纭"
+              title:"不评奖不估价只欣赏，上海石友藏石品鉴",
+              content:"近日，上海秦石轩开展了一场资深石友“寻美之旅”邀请展，展会遵循不评奖、不估价、只欣赏的原则展出了众多石友的优秀作品，以下是奇石圈整理的部分资深石友藏石，供欣赏！",
+              author:"小土豆",
+              headPic:require('../../assets/images/myCenter/headpic2.jpg'),
             },
             {
               articleId:4,
               img:require('../../assets/images/myCenter/stone1.jpg'),
-              title:"奇石的由来众说大撒法纷纭"
+              title:"这就是各国国石，为什么选的就是它们呢？",
+              content:"国石是一个国家人们所喜爱的或具有优异特性和重要价值，或是在该国出产和加工方面具有物色的宝石或玉石。如同许多国家已经选定本国的国花和国鸟一样，目前世界上已有近40个国家选出了自己的国石。那么，接下来各位就和小编一道去看看各国的国石都长啥样。中国——寿山石中国素有“宝玉石之国”的美称，而中国国石评选活动是从1998年开始酝酿和实施的。",
+              author:"Vias",
+              headPic:require('../../assets/images/myCenter/headpic4.jpg'),
             },
           ]
         }
       },
       created() {
+        this.getCityLists();
       },
       mounted() {
         // $(".stone-culture").css("min-height",this.Height-$("#myHeader").height());
@@ -324,6 +338,33 @@
         articleDetails(articleId){
           let url = `/stoneArticle/${articleId}`;
           this.$router.push({ path:url});
+        },
+        getCityLists(){
+          this.$ajax({
+            methods:'get',
+            url:`${this.$store.state.baseURL}/stoneArticle/cityList`,
+          }).then((res)=>{
+            this.cityLists = res.data.data;
+          });
+        },
+        getStoneType(proId,proName){
+          $.ajax({
+            url: `${this.$store.state.baseURL}/stoneArticle/stoneTypeLists`,
+            type: "post",
+            data: {
+                provinceId:proId,
+                provinceName:proName
+            },
+            success: function (result) {
+              console.log(result);
+            }
+          })
+          // axios.post(`${this.$store.state.baseURL}/stoneArticle/stoneTypeLists`,{
+          //   provinceId:proId,
+          //   provinceName:proName
+          // }).then((res)=>{
+          //   console.log(res);
+          // })
         }
       },
     }

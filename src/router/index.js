@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import axios from 'axios'
+
 import index from '@/views/index/index'
 import expoStoneIndex from '@/views/expoStone/expoStoneIndex'
 import circleStoneIndex from '@/views/circleStone/circleStoneIndex'
@@ -16,12 +18,11 @@ import myFans from '@/views/myCenter/myFans'
 import myFollow from '@/views/myCenter/myFollow'
 
 
-
-
 import settings from '@/views/settings/settingsIndex'
 import publishStone from '@/views/publishStone/publishStone'
 import stoneAssessment from '@/views/stoneAssessment/stoneAssessmentIndex'
 
+Vue.prototype.$ajax = axios;
 Vue.use(Router)
 
 export default new Router({
