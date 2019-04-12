@@ -4,7 +4,7 @@
       <div class="author-info">
         <div class="header-box">
           <img src="../../assets/images/myCenter/headpic1.jpg">
-          <p>Hecate</p>
+          <p>小番茄</p>
           <div class="follow-btn">关注</div>
         </div>
         <div class="info-details">
@@ -48,7 +48,12 @@
           </div>
         </div>
         <div class="article-details">
-
+          {{content}}
+          <div>
+            <img src="../../assets/images/myCenter/stone2.jpg">
+          </div>
+          {{content}}
+          {{content}}
         </div>
       </div>
     </div>
@@ -57,7 +62,12 @@
 
 <script>
     export default {
-        name: "articleIndex"
+        name: "articleIndex",
+      data(){
+          return{
+            content:"国石是一个国家人们所喜爱的或具有优异特性和重要价值，或是在该国出产和加工方面具有物色的宝石或玉石。如同许多国家已经选定本国的国花和国鸟一样，目前世界上已有近40个国家选出了自己的国石。那么，接下来各位就和小编一道去看看各国的国石都长啥样。中国——寿山石中国素有“宝玉石之国”的美称，而中国国石评选活动是从1998年开始酝酿和实施的。",
+          }
+      }
     }
 </script>
 
@@ -73,6 +83,7 @@
   /*作者信息部分*/
   .author-info{
     width: 250px;
+    height: 220px;
     background: #fff;
     margin-right: 10px;
   }
@@ -201,5 +212,16 @@
   }
   .article-content .publish .collection span{
 
+  }
+  .article-details{
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+  }
+  .article-details img{
+    width: 400px;
+    height: auto;
+    text-align: center;
+    margin: 10px;
   }
 </style>

@@ -4,21 +4,22 @@
         <div class="center-banner">
           <div class="userinfo">
             <div class="user-headpic">
-              <img src="../../assets/images/myCenter/headpic.jpg">
+              <!--<img src="../../assets/images/myCenter/headpic.jpg">-->
+              <img :src="userHeadPic">
             </div>
-            <div class="user-name">Hecate</div>
-            <div class="user-intro">Good Good Study,Day Day Up</div>
+            <div class="user-name">{{userInfo.userinfo[0].userNickName}}</div>
+            <div class="user-intro">{{userInfo.userinfo[0].userMotto}}</div>
             <div class="user-list">
               <div class="user-item" @click="routerUrl('/myCenter/myFollow')">
-                <p class="user-item-num">30</p>
+                <p class="user-item-num">{{userInfo.attentionNum.attentionNum}}</p>
                 <p class="user-item-type">我的关注</p>
               </div>
               <div class="user-item" @click="routerUrl('/myCenter/myFans')">
-                <p class="user-item-num">20</p>
+                <p class="user-item-num">{{userInfo.fansNum.fanNum}}</p>
                 <p class="user-item-type">我的粉丝</p>
               </div>
               <div class="user-item" @click="routerUrl('/myCenter/myPort')">
-                <p class="user-item-num">19</p>
+                <p class="user-item-num">{{userInfo.articleNum.articleNum}}</p>
                 <p class="user-item-type">我的发布</p>
               </div>
             </div>
@@ -111,9 +112,12 @@
         return{
           Height:$(window).height(),
           Width:$(window).width(),
+          userInfo:{},
+          userHeadPic:"",
         }
       },
       created() {
+        this.getUsersInfo(1);
       },
       mounted() {
         $(".my-center").css("min-height",this.Height-$("#myHeader").height());
@@ -122,6 +126,20 @@
       //  路由跳转
         routerUrl(url){
           this.$router.push({ path:url});
+        },
+        getUsersInfo(userId){
+          $.ajax({
+            url:`${this.$store.state.baseURL}/users/${userId}`,
+            methods:'get',
+          }).then((res)=>{
+            this.userInfo = res.data;
+            this.userHeadPic = this.getImageUrl(this.userInfo.userinfo[0].userHeadPic);
+            console.log(this.userInfo);
+            console.log(this.userHeadPic);
+          })
+        },
+        getImageUrl(oUrl){
+          return `${this.$store.state.baseURL}${oUrl}`;
         },
       },
     }
