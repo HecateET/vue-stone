@@ -38,7 +38,7 @@
             <p class="article-author">作者</p>
             <p class="article-time">发布时间</p>
           </div>
-          <div class="article-item" v-for="(item,index) in articleList" :key="index">
+          <div class="article-item" @click="goToDetails(item.url)" v-for="(item,index) in articleList" :key="index">
             <p class="article-title">{{item.portTitle}}</p>
             <p class="article-author">{{item.portAuthor}}</p>
             <p class="article-time">{{item.endTime}}</p>
@@ -59,7 +59,7 @@
         <!--收藏的奇石-->
         <div v-show="collectionType==3" class="love-stone-content">
           <div class="row stone-list">
-            <div class="stone-item col-sm-3"  v-for="(item,index) in stoneList" :key="index">
+            <div class="stone-item col-sm-3" @click="goToDetails(item.stoneUrl)" v-for="(item,index) in stoneList" :key="index">
               <img class="stone-img" :src="item.stoneImage">
               <div class="stone-info">
                   <div class="info-left">
@@ -101,39 +101,46 @@
             {
               portTitle:"谈谈各地的奇石吧",
               portAuthor:"Hecate",
-              endTime:"2019-2-20 9:30"
+              endTime:"2019-2-20 9:30",
+              url:"/stoneArticle/1"
             },
             {
               portTitle:"我与寿山石的渊源",
               portAuthor:"小可爱",
-              endTime:"2019-1-30 9:30"
+              endTime:"2019-1-30 9:30",
+              url:"/stoneArticle/2",
             },
             {
               portTitle:"每一颗石头都是一种历练后的展现",
               portAuthor:"Corle",
-              endTime:"2019-1-19 19:30"
+              endTime:"2019-1-19 19:30",
+              url:"/stoneArticle/2",
             }
           ],
           articleList:[
             {
               portTitle:"中国奇石品种名录",
               portAuthor:"Judy",
-              endTime:"2019-2-20 9:30"
+              endTime:"2019-2-20 9:30",
+              url:'/stoneArticle/1',
             },
             {
               portTitle:"赏石文化的由来",
               portAuthor:"Andy",
-              endTime:"2019-2-20 9:30"
+              endTime:"2019-2-20 9:30",
+              url:"/stoneArticle/2",
             },
             {
               portTitle:"一韩国人10年买走300顿，这种怒江边常见的小石头几近绝迹！",
               portAuthor:"小可爱",
-              endTime:"2019-1-30 9:30"
+              endTime:"2019-1-30 9:30",
+              url:"/stoneArticle/3",
             },
             {
               portTitle:"石友们最珍贵的石头都是啥样的？快来一睹为快！",
               portAuthor:"Corle",
-              endTime:"2019-1-19 19:30"
+              endTime:"2019-1-19 19:30",
+              url:"/stoneArticle/4",
             }
           ],
           stoneList:[
@@ -142,6 +149,7 @@
               stoneAuthor:"Andy",
               stoneType:"九龙壁",
               stoneTime:"2019-1-31",
+              stoneUrl:"/stoneImage/1",
               stoneImage:require("../../assets/images/myCenter/stone1.jpg"),
             },
             {
@@ -149,6 +157,7 @@
               stoneAuthor:"Hecate",
               stoneType:"其它石种",
               stoneTime:"2019-1-31",
+              stoneUrl:"/stoneImage/2",
               stoneImage:require("../../assets/images/myCenter/stone3.png"),
             },
             {
@@ -156,6 +165,7 @@
               stoneAuthor:"小可爱",
               stoneType:"寿山石",
               stoneTime:"2019-1-31",
+              stoneUrl:"/stoneImage/3",
               stoneImage:require("../../assets/images/myCenter/stone4.png"),
             },
             {
@@ -163,6 +173,7 @@
               stoneAuthor:"传奇",
               stoneType:"九龙壁",
               stoneTime:"2019-1-31",
+              stoneUrl:"/stoneImage/4",
               stoneImage:require("../../assets/images/myCenter/stone2.jpg"),
             },
           ],
@@ -171,6 +182,9 @@
       methods:{
         changeType(type){
           this.collectionType=type;
+        },
+        goToDetails(url){
+          this.$router.push({ path:url});
         }
       },
     }

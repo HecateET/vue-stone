@@ -22,6 +22,7 @@
               <p class="punch-time">{{item.punchData}}</p>
               <div class="port-title">{{item.portTitle}}</div>
               <div class="picture">
+                <img :src="item.stoneUrl">
               </div>
             </div>
           </div>
@@ -45,82 +46,83 @@
                 userName:"Hecate",
                 punchData:"2019-3-18 09:09",
                 portTitle:"静态天气真真好呀哈哈啊哈哈大方",
-                userHeadPic:"../../assets/images/myCenter/headpic.jpg",
+                userHeadPic:require("../../assets/images/myCenter/headpic.jpg"),
                 portViews:"90",
                 comments:"1",
                 contentPictures:{},
                 portStar:3,
+                stoneUrl:require("../../assets/images/myCenter/stone1.jpg"),
               },
-              {
-                userName:"Hecate",
-                punchData:"2019-3-18 09:09",
-                portTitle:"静态天气真真好呀哈哈啊哈哈大方",
-                userHeadPic:"../../assets/images/myCenter/headpic.jpg",
-                portViews:"90",
-                comments:"1",
-                contentPictures:{},
-                portStar:3,
-              },
-              {
-                userName:"Hecate",
-                punchData:"2019-3-18 09:09",
-                portTitle:"静态天气真真好呀哈哈啊哈哈大方",
-                userHeadPic:"../../assets/images/myCenter/headpic.jpg",
-                portViews:"90",
-                comments:"1",
-                contentPictures:{},
-                portStar:3,
-              },
-              {
-                userName:"Hecate",
-                punchData:"2019-3-18 09:09",
-                portTitle:"静态天气真真好呀哈哈啊哈哈大方",
-                userHeadPic:"../../assets/images/myCenter/headpic.jpg",
-                portViews:"90",
-                comments:"1",
-                contentPictures:{},
-                portStar:3,
-              },
-              {
-                userName:"Hecate",
-                punchData:"2019-3-18 09:09",
-                portTitle:"静态天dsfadsfasf气真真好呀哈哈啊哈哈大方",
-                userHeadPic:"../../assets/images/myCenter/headpic.jpg",
-                portViews:"10",
-                comments:"9",
-                contentPictures:{},
-                portStar:5,
-              },
-              {
-                userName:"Hecate",
-                punchData:"2019-3-15 09:09",
-                portTitle:"静态dsfdsfad天气真真好呀哈哈啊哈哈大方",
-                userHeadPic:"../../assets/images/myCenter/headpic.jpg",
-                portViews:"10",
-                comments:"2",
-                contentPictures:{},
-                portStar:9,
-              },
-              {
-                userName:"Hecate",
-                punchData:"2019-3-15 09:09",
-                portTitle:"静态dsfdsfad天气真真好呀哈哈啊哈哈大方",
-                userHeadPic:"../../assets/images/myCenter/headpic.jpg",
-                portViews:"10",
-                comments:"2",
-                contentPictures:{},
-                portStar:0,
-              },
-              {
-                userName:"Hecate",
-                punchData:"2019-3-15 09:09",
-                portTitle:"静态dsfdsfad天气真真好呀哈哈啊哈哈大方",
-                userHeadPic:"../../assets/images/myCenter/headpic.jpg",
-                portViews:"10",
-                comments:"0",
-                contentPictures:{},
-                portStar:9,
-              },
+              // {
+              //   userName:"Hecate",
+              //   punchData:"2019-3-18 09:09",
+              //   portTitle:"静态天气真真好呀哈哈啊哈哈大方",
+              //   userHeadPic:"../../assets/images/myCenter/headpic.jpg",
+              //   portViews:"90",
+              //   comments:"1",
+              //   contentPictures:{},
+              //   portStar:3,
+              // },
+              // {
+              //   userName:"Hecate",
+              //   punchData:"2019-3-18 09:09",
+              //   portTitle:"静态天气真真好呀哈哈啊哈哈大方",
+              //   userHeadPic:"../../assets/images/myCenter/headpic.jpg",
+              //   portViews:"90",
+              //   comments:"1",
+              //   contentPictures:{},
+              //   portStar:3,
+              // },
+              // {
+              //   userName:"Hecate",
+              //   punchData:"2019-3-18 09:09",
+              //   portTitle:"静态天气真真好呀哈哈啊哈哈大方",
+              //   userHeadPic:"../../assets/images/myCenter/headpic.jpg",
+              //   portViews:"90",
+              //   comments:"1",
+              //   contentPictures:{},
+              //   portStar:3,
+              // },
+              // {
+              //   userName:"Hecate",
+              //   punchData:"2019-3-18 09:09",
+              //   portTitle:"静态天dsfadsfasf气真真好呀哈哈啊哈哈大方",
+              //   userHeadPic:"../../assets/images/myCenter/headpic.jpg",
+              //   portViews:"10",
+              //   comments:"9",
+              //   contentPictures:{},
+              //   portStar:5,
+              // },
+              // {
+              //   userName:"Hecate",
+              //   punchData:"2019-3-15 09:09",
+              //   portTitle:"静态dsfdsfad天气真真好呀哈哈啊哈哈大方",
+              //   userHeadPic:"../../assets/images/myCenter/headpic.jpg",
+              //   portViews:"10",
+              //   comments:"2",
+              //   contentPictures:{},
+              //   portStar:9,
+              // },
+              // {
+              //   userName:"Hecate",
+              //   punchData:"2019-3-15 09:09",
+              //   portTitle:"静态dsfdsfad天气真真好呀哈哈啊哈哈大方",
+              //   userHeadPic:"../../assets/images/myCenter/headpic.jpg",
+              //   portViews:"10",
+              //   comments:"2",
+              //   contentPictures:{},
+              //   portStar:0,
+              // },
+              // {
+              //   userName:"Hecate",
+              //   punchData:"2019-3-15 09:09",
+              //   portTitle:"静态dsfdsfad天气真真好呀哈哈啊哈哈大方",
+              //   userHeadPic:"../../assets/images/myCenter/headpic.jpg",
+              //   portViews:"10",
+              //   comments:"0",
+              //   contentPictures:{},
+              //   portStar:9,
+              // },
             ]
           }
       },
@@ -219,7 +221,10 @@
     height: 150px;
     background-color: palegreen;
   }
-
+  .item-container .picture img{
+    width: 150px;
+    height: 150px;
+  }
   .my-port-item .item-content-bottom{
 
     display: -webkit-box;

@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import axios from 'axios'
-
 import index from '@/views/index/index'
 import expoStoneIndex from '@/views/expoStone/expoStoneIndex'
+import stoneImage from '@/views/expoStone/stoneImage'
 import circleStoneIndex from '@/views/circleStone/circleStoneIndex'
 import stoneCultureIndex from '@/views/stoneCulture/stoneCultureIndex'
 import stoneArticle from '@/views/stoneCulture/articleIndex'
@@ -36,6 +36,12 @@ export default new Router({
       path: '/expoStone',
       name: 'expoStoneIndex',
       component: expoStoneIndex
+    },
+    {
+      //奇石图片详情
+      path:'/stoneImage/:id',
+      name:"stoneImage",
+      component:stoneImage,
     },
     { //奇石圈
       path: '/circleStone',
